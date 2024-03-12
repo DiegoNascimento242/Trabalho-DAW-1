@@ -1,0 +1,478 @@
+[Device Install Log]
+     OS Version = 6.3.9600
+     Service Pack = 0.0
+     Suite = 0x0300
+     ProductType = 1
+     Architecture = amd64
+
+[BeginLog]
+
+[Boot Session: 2019/02/26 08:45:13.497]
+
+>>>  [Device Install (UpdateDriverForPlugAndPlayDevices) - PCI\VEN_10EC&DEV_5289&SUBSYS_02401558]
+>>>  Section start 2019/02/26 09:25:00.907
+      cmd: "D:\Snappy Driver\Snappy Driver_R1809\SDI_x64_R1809.exe" 
+     dvi: {Update Device Driver - PCI\VEN_10EC&DEV_5289&SUBSYS_02401558&REV_01\4&35ECD3C4&0&00E3}
+     dvi:      {Build Driver List} 09:25:00.922
+     dvi:           Searching for hardware ID(s):
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558&rev_01
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558
+     dvi:                pci\ven_10ec&dev_5289&cc_ff0000
+     dvi:                pci\ven_10ec&dev_5289&cc_ff00
+     dvi:           Searching for compatible ID(s):
+     dvi:                pci\ven_10ec&dev_5289&rev_01
+     dvi:                pci\ven_10ec&dev_5289
+     dvi:                pci\ven_10ec&cc_ff0000
+     dvi:                pci\ven_10ec&cc_ff00
+     dvi:                pci\ven_10ec
+     dvi:                pci\cc_ff0000
+     dvi:                pci\cc_ff00
+     sig:           {_VERIFY_FILE_SIGNATURE} 09:25:00.922
+     sig:                Key      = rtsbastor.inf
+     sig:                FilePath = c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     sig:                Catalog  = c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\RtsBaStor64.cat
+     sig:                Success: File is signed in catalog.
+     sig:           {_VERIFY_FILE_SIGNATURE exit(0x00000000)} 09:25:00.954
+     dvi:           Created Driver Node:
+     dvi:                HardwareID   - PCI\VEN_10EC&DEV_5289&CC_FF00
+     dvi:                InfName      - c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     dvi:                DevDesc      - Realtek PCIE CardReader
+     dvi:                Section      - Rts5208.Inst.NTamd64
+     dvi:                Rank         - 0x00ff0003
+     dvi:                Signer Score - WHQL
+     dvi:                DrvDate      - 10/26/2017
+     dvi:                Version      - 10.0.16299.27059
+     dvi:           Created Driver Node:
+     dvi:                HardwareID   - PCI\VEN_10EC&DEV_5289&SUBSYS_02401558
+     dvi:                InfName      - c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     dvi:                DevDesc      - Realtek PCIE CardReader
+     dvi:                Section      - Rts5208.Inst.NTamd64
+     dvi:                Rank         - 0x00ff0001
+     dvi:                Signer Score - WHQL
+     dvi:                DrvDate      - 10/26/2017
+     dvi:                Version      - 10.0.16299.27059
+     dvi:      {Build Driver List - exit(0x00000000)} 09:25:00.954
+     dvi:      {DIF_SELECTBESTCOMPATDRV} 09:25:00.954
+     dvi:           No class installer for 'Dispositivo PCI'
+     dvi:           No CoInstallers found
+     dvi:           Default installer: Enter 09:25:00.954
+     dvi:                {Select Best Driver}
+     dvi:                     Class GUID of device changed to: {4d36e970-e325-11ce-bfc1-08002be10318}.
+     dvi:                     Selected:
+     dvi:                          Description - [Realtek PCIE CardReader]
+     dvi:                          InfFile     - [c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf]
+     dvi:                          Section     - [Rts5208.Inst]
+     dvi:                     Basic Driver Skipped:
+     dvi:                          Description - 'Realtek PCIE CardReader'
+     dvi:                          InfFile     - c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     dvi:                          Section     - [Rts5208.Inst]
+     dvi:                {Select Best Driver - exit(0x00000000)}
+     dvi:           Default installer: Exit
+     dvi:      {DIF_SELECTBESTCOMPATDRV - exit(0x00000000)} 09:25:00.969
+     ndv:      Forcing driver install:
+     ndv:           Inf Name       - rtsbastor.inf
+     ndv:           Driver Date    - 10/26/2017
+     ndv:           Driver Version - 10.0.16299.27059
+     sto:      {Setup Import Driver Package: c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf} 09:25:00.969
+     inf:           Provider: Realtek Semiconduct Corp.
+     inf:           Class GUID: {4d36e970-e325-11ce-bfc1-08002be10318}
+     inf:           Driver Version: 10/26/2017,10.0.16299.27059
+     inf:           Catalog File: RtsBaStor64.cat
+     sto:           {Copy Driver Package: c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf} 09:25:00.969
+     sto:                Driver Package = c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     sto:                Flags          = 0x00000007
+     sto:                Destination    = C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}
+     sto:                Copying driver package files to 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf' to 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\rtsbastor.inf'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\RtsBaStor.sys' to 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\RtsBaStor.sys'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\RtsBaStor64.cat' to 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\RtsBaStor64.cat'.
+     sto:           {Copy Driver Package: exit(0x00000000)} 09:25:00.985
+     pol:           {Driver package policy check} 09:25:01.110
+     pol:           {Driver package policy check - exit(0x00000000)} 09:25:01.110
+     sto:           {Stage Driver Package: C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\rtsbastor.inf} 09:25:01.110
+     inf:                {Query Configurability: C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\rtsbastor.inf} 09:25:01.126
+     inf:                     Driver package 'rtsbastor.inf' is configurable.
+     inf:                {Query Configurability: exit(0x00000000)} 09:25:01.126
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\rtsbastor.inf' to 'C:\Windows\System32\DriverStore\Temp\{61db9592-2546-0641-9763-ca66e118fb47}\rtsbastor.inf'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\RtsBaStor.sys' to 'C:\Windows\System32\DriverStore\Temp\{61db9592-2546-0641-9763-ca66e118fb47}\RtsBaStor.sys'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{3203c43e-5595-6545-8ad5-0f521b09ed6a}\RtsBaStor64.cat' to 'C:\Windows\System32\DriverStore\Temp\{61db9592-2546-0641-9763-ca66e118fb47}\RtsBaStor64.cat'.
+     sto:                {DRIVERSTORE IMPORT VALIDATE} 09:25:01.141
+     sig:                     {_VERIFY_FILE_SIGNATURE} 09:25:01.157
+     sig:                          Key      = rtsbastor.inf
+     sig:                          FilePath = C:\Windows\System32\DriverStore\Temp\{61db9592-2546-0641-9763-ca66e118fb47}\rtsbastor.inf
+     sig:                          Catalog  = C:\Windows\System32\DriverStore\Temp\{61db9592-2546-0641-9763-ca66e118fb47}\RtsBaStor64.cat
+     sig:                          Success: File is signed in catalog.
+     sig:                     {_VERIFY_FILE_SIGNATURE exit(0x00000000)} 09:25:01.172
+     sto:                {DRIVERSTORE IMPORT VALIDATE: exit(0x00000000)} 09:25:01.188
+     sig:                Signer Score = 0x0D000005
+     sig:                Signer Name  = Microsoft Windows Hardware Compatibility Publisher
+     sto:                {DRIVERSTORE IMPORT BEGIN} 09:25:01.188
+     sto:                {DRIVERSTORE IMPORT BEGIN: exit(0x00000000)} 09:25:01.188
+     cpy:                {Copy Directory: C:\Windows\System32\DriverStore\Temp\{61db9592-2546-0641-9763-ca66e118fb47}} 09:25:01.188
+     cpy:                     Target Path = C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736
+     cpy:                {Copy Directory: exit(0x00000000)} 09:25:01.204
+     idb:                {Register Driver Package: C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf} 09:25:01.204
+     idb:                     Created driver package object 'rtsbastor.inf_amd64_310a46fab22ab736' in DRIVERS database node.
+     idb:                     Created driver INF file object 'oem7.inf' in DRIVERS database node.
+     idb:                     Registered driver package 'rtsbastor.inf_amd64_310a46fab22ab736' with 'oem7.inf'.
+     idb:                {Register Driver Package: exit(0x00000000)} 09:25:01.219
+     idb:                {Publish Driver Package: C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf} 09:25:01.219
+     idb:                     Activating driver package 'rtsbastor.inf_amd64_310a46fab22ab736'.
+     cpy:                     Published 'rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf' to 'oem7.inf'.
+     idb:                     Indexed 131 device IDs for 'rtsbastor.inf_amd64_310a46fab22ab736'.
+     idb:                {Publish Driver Package: exit(0x00000000)} 09:25:01.251
+     sto:                {DRIVERSTORE IMPORT END} 09:25:01.266
+     sig:                     Installed catalog 'RtsBaStor64.cat' as 'oem7.cat'.
+     sto:                {DRIVERSTORE IMPORT END: exit(0x00000000)} 09:25:01.329
+     sto:           {Stage Driver Package: exit(0x00000000)} 09:25:01.329
+     sto:      {Setup Import Driver Package - exit (0x00000000)} 09:25:01.344
+     dvi:      Searching for hardware ID(s):
+     dvi:           pci\ven_10ec&dev_5289&subsys_02401558&rev_01
+     dvi:           pci\ven_10ec&dev_5289&subsys_02401558
+     dvi:           pci\ven_10ec&dev_5289&cc_ff0000
+     dvi:           pci\ven_10ec&dev_5289&cc_ff00
+     dvi:      Searching for compatible ID(s):
+     dvi:           pci\ven_10ec&dev_5289&rev_01
+     dvi:           pci\ven_10ec&dev_5289
+     dvi:           pci\ven_10ec&cc_ff0000
+     dvi:           pci\ven_10ec&cc_ff00
+     dvi:           pci\ven_10ec
+     dvi:           pci\cc_ff0000
+     dvi:           pci\cc_ff00
+     dvi:      Class GUID of device changed to: {4d36e970-e325-11ce-bfc1-08002be10318}.
+     dvi:      {Plug and Play Service: Device Install for PCI\VEN_10EC&DEV_5289&SUBSYS_02401558&REV_01\4&35ECD3C4&0&00E3}
+     ndv:           Driver INF Path: C:\Windows\INF\oem7.inf
+     ndv:           Driver Node Name: rtsbastor.inf:b2fe48189b1fd92d:Rts5208.Inst:10.0.16299.27059:pci\ven_10ec&dev_5289&subsys_02401558
+     ndv:           Driver Store Path: C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf
+     dvi:           Searching for hardware ID(s):
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558&rev_01
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558
+     dvi:                pci\ven_10ec&dev_5289&cc_ff0000
+     dvi:                pci\ven_10ec&dev_5289&cc_ff00
+     dvi:           Searching for compatible ID(s):
+     dvi:                pci\ven_10ec&dev_5289&rev_01
+     dvi:                pci\ven_10ec&dev_5289
+     dvi:                pci\ven_10ec&cc_ff0000
+     dvi:                pci\ven_10ec&cc_ff00
+     dvi:                pci\ven_10ec
+     dvi:                pci\cc_ff0000
+     dvi:                pci\cc_ff00
+     dvi:           Class GUID of device changed to: {4d36e970-e325-11ce-bfc1-08002be10318}.
+     ndv:           {Core Device Install} 09:25:01.376
+     sto:                {Configure Driver Package: C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf}
+     sto:                     Driver Package = rtsbastor.inf_amd64_310a46fab22ab736
+     sto:                     Flags          = 0x00020000
+     sto:                     Source Filter  = pci\ven_10ec&dev_5289&subsys_02401558
+     inf:                     Class GUID     = {4d36e970-e325-11ce-bfc1-08002be10318}
+     inf:                     Class Status   = Configurable
+     inf:                     {Configure Driver: Realtek PCIE CardReader}
+     inf:                          Manufacturer = Realtek Semiconduct Corp.
+     inf:                          Section Name = Rts5208.Inst.NTamd64
+     inf:                          {Add Service: RSBASTOR}
+     inf:                               Start Type    = 3
+     inf:                               Service Type  = 1
+     inf:                               Error Control = 0
+     inf:                               Image Path    = \SystemRoot\System32\drivers\RtsBaStor.sys
+     inf:                               Display Name  = Realtek PCIE CardReader Driver - BA
+     inf:                               Created new service 'RSBASTOR'.
+     inf:                          {Add Service: exit(0x00000000)}
+     inf:                          Hardware Id  = PCI\VEN_10EC&DEV_5289&SUBSYS_02401558
+     inf:                          {Configure Driver Configuration: Rts5208.Inst.NTamd64}
+     inf:                               Service Name  = RSBASTOR
+     inf:                               Config Flags  = 0x00000000
+     inf:                          {Configure Driver Configuration: exit(0x00000000)}
+     inf:                     {Configure Driver: exit(0x00000000)}
+     flq:                     Copying 'C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\RtsBaStor.sys' to 'C:\Windows\System32\drivers\RtsBaStor.sys'.
+     dvi:                     Existing files modified, may need to restart related services.
+     sto:                {Configure Driver Package: exit(0x00000bc3)}
+     ndv:                Restart required for any devices using this driver.
+     dvi:                Install Device: Configuring device (oem7.inf:pci\ven_10ec&dev_5289&subsys_02401558,Rts5208.Inst.NTamd64). 09:25:01.516
+     dvi:                Install Device: Configuring device completed. 09:25:01.516
+     dvi:                {Restarting Devices} 09:25:01.516
+     dvi:                     Restart: PCI\VEN_10EC&DEV_5289&SUBSYS_02401558&REV_01\4&35ECD3C4&0&00E3
+     dvi:                {Restarting Devices exit} 09:25:02.485
+     ndv:           {Core Device Install - exit(0x00000000)} 09:25:02.485
+     ump:      {Plug and Play Service: Device Install exit(00000000)}
+     ndv: {Update Device Driver - exit(00000000)}
+<<<  Section end 2019/02/26 09:25:02.485
+<<<  [Exit status: SUCCESS]
+
+
+>>>  [Device Install (UpdateDriverForPlugAndPlayDevices) - PCI\VEN_10EC&DEV_5289&SUBSYS_02401558]
+>>>  Section start 2019/02/26 09:25:02.547
+      cmd: "C:\Users\User\AppData\Local\Temp\SDI\install64.exe" "PCI\VEN_10EC&DEV_5289&SUBSYS_02401558" "C:\Users\User\AppData\Local\Temp\SDI\Realtek\FORCED\NTx64\5289_10.0.16299.27059\RtsBaStor.inf"
+     dvi: {Update Device Driver - PCI\VEN_10EC&DEV_5289&SUBSYS_02401558&REV_01\4&35ECD3C4&0&00E3}
+     dvi:      {Build Driver List} 09:25:02.563
+     dvi:           Searching for hardware ID(s):
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558&rev_01
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558
+     dvi:                pci\ven_10ec&dev_5289&cc_ff0000
+     dvi:                pci\ven_10ec&dev_5289&cc_ff00
+     dvi:           Searching for compatible ID(s):
+     dvi:                pci\ven_10ec&dev_5289&rev_01
+     dvi:                pci\ven_10ec&dev_5289
+     dvi:                pci\ven_10ec&cc_ff0000
+     dvi:                pci\ven_10ec&cc_ff00
+     dvi:                pci\ven_10ec
+     dvi:                pci\cc_ff0000
+     dvi:                pci\cc_ff00
+     dvi:           Created Driver Node:
+     dvi:                HardwareID   - PCI\VEN_10EC&DEV_5289&CC_FF00
+     dvi:                InfName      - c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     dvi:                DevDesc      - Realtek PCIE CardReader
+     dvi:                Section      - Rts5208.Inst.NTamd64
+     dvi:                Rank         - 0x00ff0003
+     dvi:                Signer Score - WHQL
+     dvi:                DrvDate      - 10/26/2017
+     dvi:                Version      - 10.0.16299.27059
+     dvi:           Created Driver Node:
+     dvi:                HardwareID   - PCI\VEN_10EC&DEV_5289&SUBSYS_02401558
+     dvi:                InfName      - c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     dvi:                DevDesc      - Realtek PCIE CardReader
+     dvi:                Section      - Rts5208.Inst.NTamd64
+     dvi:                Rank         - 0x00ff0001
+     dvi:                Signer Score - WHQL
+     dvi:                DrvDate      - 10/26/2017
+     dvi:                Version      - 10.0.16299.27059
+     dvi:      {Build Driver List - exit(0x00000000)} 09:25:02.579
+     dvi:      {DIF_SELECTBESTCOMPATDRV} 09:25:02.579
+     dvi:           No class installer for 'Realtek PCIE CardReader'
+     dvi:           No CoInstallers found
+     dvi:           Default installer: Enter 09:25:02.579
+     dvi:                {Select Best Driver}
+     dvi:                     Class GUID of device changed to: {4d36e970-e325-11ce-bfc1-08002be10318}.
+     dvi:                     Selected:
+     dvi:                          Description - [Realtek PCIE CardReader]
+     dvi:                          InfFile     - [c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf]
+     dvi:                          Section     - [Rts5208.Inst]
+     dvi:                     Basic Driver Skipped:
+     dvi:                          Description - 'Realtek PCIE CardReader'
+     dvi:                          InfFile     - c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf
+     dvi:                          Section     - [Rts5208.Inst]
+     dvi:                {Select Best Driver - exit(0x00000000)}
+     dvi:           Default installer: Exit
+     dvi:      {DIF_SELECTBESTCOMPATDRV - exit(0x00000000)} 09:25:02.579
+     ndv:      Forcing driver install:
+     ndv:           Inf Name       - rtsbastor.inf
+     ndv:           Driver Date    - 10/26/2017
+     ndv:           Driver Version - 10.0.16299.27059
+     ndv:      Driver package 'c:\users\user\appdata\local\temp\sdi\realtek\forced\ntx64\5289_10.0.16299.27059\rtsbastor.inf' exists under 'C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf'.
+     dvi:      Searching for hardware ID(s):
+     dvi:           pci\ven_10ec&dev_5289&subsys_02401558&rev_01
+     dvi:           pci\ven_10ec&dev_5289&subsys_02401558
+     dvi:           pci\ven_10ec&dev_5289&cc_ff0000
+     dvi:           pci\ven_10ec&dev_5289&cc_ff00
+     dvi:      Searching for compatible ID(s):
+     dvi:           pci\ven_10ec&dev_5289&rev_01
+     dvi:           pci\ven_10ec&dev_5289
+     dvi:           pci\ven_10ec&cc_ff0000
+     dvi:           pci\ven_10ec&cc_ff00
+     dvi:           pci\ven_10ec
+     dvi:           pci\cc_ff0000
+     dvi:           pci\cc_ff00
+     dvi:      Class GUID of device changed to: {4d36e970-e325-11ce-bfc1-08002be10318}.
+     dvi:      {Plug and Play Service: Device Install for PCI\VEN_10EC&DEV_5289&SUBSYS_02401558&REV_01\4&35ECD3C4&0&00E3}
+     ndv:           Driver INF Path: C:\Windows\INF\oem7.inf
+     ndv:           Driver Node Name: rtsbastor.inf:b2fe48189b1fd92d:Rts5208.Inst:10.0.16299.27059:pci\ven_10ec&dev_5289&subsys_02401558
+     ndv:           Driver Store Path: C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf
+     dvi:           Searching for hardware ID(s):
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558&rev_01
+     dvi:                pci\ven_10ec&dev_5289&subsys_02401558
+     dvi:                pci\ven_10ec&dev_5289&cc_ff0000
+     dvi:                pci\ven_10ec&dev_5289&cc_ff00
+     dvi:           Searching for compatible ID(s):
+     dvi:                pci\ven_10ec&dev_5289&rev_01
+     dvi:                pci\ven_10ec&dev_5289
+     dvi:                pci\ven_10ec&cc_ff0000
+     dvi:                pci\ven_10ec&cc_ff00
+     dvi:                pci\ven_10ec
+     dvi:                pci\cc_ff0000
+     dvi:                pci\cc_ff00
+     dvi:           Class GUID of device changed to: {4d36e970-e325-11ce-bfc1-08002be10318}.
+     ndv:           {Core Device Install} 09:25:02.626
+     sto:                {Configure Driver Package: C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\rtsbastor.inf}
+     sto:                     Driver Package = rtsbastor.inf_amd64_310a46fab22ab736
+     sto:                     Flags          = 0x00020000
+     sto:                     Source Filter  = pci\ven_10ec&dev_5289&subsys_02401558
+     inf:                     Class GUID     = {4d36e970-e325-11ce-bfc1-08002be10318}
+     inf:                     Class Status   = Configurable
+     inf:                     {Configure Driver: Realtek PCIE CardReader}
+     inf:                          Manufacturer = Realtek Semiconduct Corp.
+     inf:                          Section Name = Rts5208.Inst.NTamd64
+     inf:                          {Add Service: RSBASTOR}
+     inf:                               Start Type    = 3
+     inf:                               Service Type  = 1
+     inf:                               Error Control = 0
+     inf:                               Image Path    = \SystemRoot\System32\drivers\RtsBaStor.sys
+     inf:                               Display Name  = Realtek PCIE CardReader Driver - BA
+     inf:                               Updated service 'RSBASTOR'.
+     inf:                          {Add Service: exit(0x00000000)}
+     inf:                          Hardware Id  = PCI\VEN_10EC&DEV_5289&SUBSYS_02401558
+     inf:                          {Configure Driver Configuration: Rts5208.Inst.NTamd64}
+     inf:                               Service Name  = RSBASTOR
+     inf:                               Config Flags  = 0x00000000
+     inf:                          {Configure Driver Configuration: exit(0x00000000)}
+     inf:                     {Configure Driver: exit(0x00000000)}
+     flq:                     Copying 'C:\Windows\System32\DriverStore\FileRepository\rtsbastor.inf_amd64_310a46fab22ab736\RtsBaStor.sys' to 'C:\Windows\System32\drivers\RtsBaStor.sys'.
+     cpy:                     Existing file 'C:\Windows\System32\drivers\RtsBaStor.sys' remains unchanged.
+     sto:                {Configure Driver Package: exit(0x00000000)}
+     dvi:                Install Device: Configuring device (oem7.inf:pci\ven_10ec&dev_5289&subsys_02401558,Rts5208.Inst.NTamd64). 09:25:02.719
+     dvi:                Install Device: Configuring device completed. 09:25:02.719
+     dvi:                Install Device: Removing device sub-tree. 09:25:02.719
+     dvi:                Install Device: Removing device sub-tree completed. 09:25:03.079
+     dvi:                Install Device: Restarting device. 09:25:03.079
+     dvi:                Install Device: Restarting device completed. 09:25:03.313
+     ndv:           {Core Device Install - exit(0x00000000)} 09:25:03.313
+     ump:      {Plug and Play Service: Device Install exit(00000000)}
+     ndv: {Update Device Driver - exit(00000000)}
+<<<  Section end 2019/02/26 09:25:03.313
+<<<  [Exit status: SUCCESS]
+
+
+>>>  [Device Install (UpdateDriverForPlugAndPlayDevices) - PCI\VEN_8086&DEV_1E3A]
+>>>  Section start 2019/02/26 09:25:08.345
+      cmd: "D:\Snappy Driver\Snappy Driver_R1809\SDI_x64_R1809.exe" 
+     dvi: {Update Device Driver - PCI\VEN_8086&DEV_1E3A&SUBSYS_34501558&REV_04\3&11583659&0&B0}
+     dvi:      {Build Driver List} 09:25:08.360
+     dvi:           Searching for hardware ID(s):
+     dvi:                pci\ven_8086&dev_1e3a&subsys_34501558&rev_04
+     dvi:                pci\ven_8086&dev_1e3a&subsys_34501558
+     dvi:                pci\ven_8086&dev_1e3a&cc_078000
+     dvi:                pci\ven_8086&dev_1e3a&cc_0780
+     dvi:           Searching for compatible ID(s):
+     dvi:                pci\ven_8086&dev_1e3a&rev_04
+     dvi:                pci\ven_8086&dev_1e3a
+     dvi:                pci\ven_8086&cc_078000
+     dvi:                pci\ven_8086&cc_0780
+     dvi:                pci\ven_8086
+     dvi:                pci\cc_078000
+     dvi:                pci\cc_0780
+     sig:           {_VERIFY_FILE_SIGNATURE} 09:25:08.376
+     sig:                Key      = heci.inf
+     sig:                FilePath = c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf
+     sig:                Catalog  = c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\HECI.cat
+     sig:                Success: File is signed in catalog.
+     sig:           {_VERIFY_FILE_SIGNATURE exit(0x00000000)} 09:25:08.376
+     dvi:           Created Driver Node:
+     dvi:                HardwareID   - PCI\VEN_8086&DEV_1E3A
+     dvi:                InfName      - c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf
+     dvi:                DevDesc      - Intel(R) Management Engine Interface 
+     dvi:                Section      - TEE_DDI_W8_x64
+     dvi:                Rank         - 0x00ff2001
+     dvi:                Signer Score - WHQL
+     dvi:                DrvDate      - 03/28/2016
+     dvi:                Version      - 11.0.5.1189
+     dvi:      {Build Driver List - exit(0x00000000)} 09:25:08.376
+     dvi:      {DIF_SELECTBESTCOMPATDRV} 09:25:08.392
+     dvi:           No class installer for 'Controlador de comunicação PCI simples'
+     dvi:           No CoInstallers found
+     dvi:           Default installer: Enter 09:25:08.392
+     dvi:                {Select Best Driver}
+     dvi:                     Class GUID of device changed to: {4d36e97d-e325-11ce-bfc1-08002be10318}.
+     dvi:                     Selected:
+     dvi:                          Description - [Intel(R) Management Engine Interface ]
+     dvi:                          InfFile     - [c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf]
+     dvi:                          Section     - [TEE_DDI_W8_x64]
+     dvi:                {Select Best Driver - exit(0x00000000)}
+     dvi:           Default installer: Exit
+     dvi:      {DIF_SELECTBESTCOMPATDRV - exit(0x00000000)} 09:25:08.392
+     ndv:      Forcing driver install:
+     ndv:           Inf Name       - heci.inf
+     ndv:           Driver Date    - 03/28/2016
+     ndv:           Driver Version - 11.0.5.1189
+     sto:      {Setup Import Driver Package: c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf} 09:25:08.392
+     inf:           Provider: Intel
+     inf:           Class GUID: {4d36e97d-e325-11ce-bfc1-08002be10318}
+     inf:           Driver Version: 03/28/2016,11.0.5.1189
+     inf:           Catalog File: HECI.cat
+     sto:           {Copy Driver Package: c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf} 09:25:08.407
+     sto:                Driver Package = c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf
+     sto:                Flags          = 0x00000007
+     sto:                Destination    = C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}
+     sto:                Copying driver package files to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\.\x64\TeeDriverx64.sys' to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\TeeDriverx64.sys'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\.\x64\WdfCoInstaller01011.dll' to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\WdfCoInstaller01011.dll'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\.\x64\TeeDriverW8x64.sys' to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\TeeDriverW8x64.sys'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\.\x64\HECIx64.sys' to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\HECIx64.sys'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\HECI.cat' to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\HECI.cat'.
+     flq:                Copying 'c:\users\user\appdata\local\temp\sdi\intel\forced\mei\ntx64\11.0.5.1189\heci.inf' to 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\heci.inf'.
+     sto:           {Copy Driver Package: exit(0x00000000)} 09:25:08.438
+     pol:           {Driver package policy check} 09:25:08.438
+     pol:           {Driver package policy check - exit(0x00000000)} 09:25:08.438
+     sto:           {Stage Driver Package: C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\heci.inf} 09:25:08.438
+     inf:                {Query Configurability: C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\heci.inf} 09:25:08.454
+     inf:                     Driver package 'heci.inf' is configurable.
+     inf:                {Query Configurability: exit(0x00000000)} 09:25:08.470
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\TeeDriverx64.sys' to 'C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\.\x64\TeeDriverx64.sys'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\WdfCoInstaller01011.dll' to 'C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\.\x64\WdfCoInstaller01011.dll'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\TeeDriverW8x64.sys' to 'C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\.\x64\TeeDriverW8x64.sys'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\.\x64\HECIx64.sys' to 'C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\.\x64\HECIx64.sys'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\HECI.cat' to 'C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\HECI.cat'.
+     flq:                Copying 'C:\Users\User\AppData\Local\Temp\{0cf07d27-98e6-2240-847c-180667dd8875}\heci.inf' to 'C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\heci.inf'.
+     sto:                {DRIVERSTORE IMPORT VALIDATE} 09:25:08.501
+     sig:                     {_VERIFY_FILE_SIGNATURE} 09:25:08.517
+     sig:                          Key      = heci.inf
+     sig:                          FilePath = C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\heci.inf
+     sig:                          Catalog  = C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\HECI.cat
+     sig:                          Success: File is signed in catalog.
+     sig:                     {_VERIFY_FILE_SIGNATURE exit(0x00000000)} 09:25:08.532
+     sto:                {DRIVERSTORE IMPORT VALIDATE: exit(0x00000000)} 09:25:08.548
+     sig:                Signer Score = 0x0D000005
+     sig:                Signer Name  = Microsoft Windows Hardware Compatibility Publisher
+     sto:                {DRIVERSTORE IMPORT BEGIN} 09:25:08.548
+     sto:                {DRIVERSTORE IMPORT BEGIN: exit(0x00000000)} 09:25:08.548
+     cpy:                {Copy Directory: C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}} 09:25:08.548
+     cpy:                     Target Path = C:\Windows\System32\DriverStore\FileRepository\heci.inf_amd64_b029e08ef3dd5b21
+     cpy:                     {Copy Directory: C:\Windows\System32\DriverStore\Temp\{1386eccb-439c-7947-9187-f2775ca24d59}\x64} 09:25:08.563
+     cpy:                          Target Path = C:\Windows\System32\DriverStore\FileRepository\heci.inf_amd64_b029e08ef3dd5b21\x64
+     cpy:                     {Copy Directory: exit(0x00000000)} 09:25:08.563
+     cpy:                {Copy Directory: exit(0x00000000)} 09:25:08.563
+     idb:                {Register Driver Package: C:\Windows\System32\DriverStore\FileRepository\heci.inf_amd64_b029e08ef3dd5b21\heci.inf} 09:25:08.563
+     idb:                     Created driver package object 'heci.inf_amd64_b029e08ef3dd5b21' in SYSTEM database node.
+     idb:                     Created driver INF file object 'oem8.inf' in SYSTEM database node.
+     idb:                     Registered driver package 'heci.inf_amd64_b029e08ef3dd5b21' with 'oem8.inf'.
+     idb:                {Register Driver Package: exit(0x00000000)} 09:25:08.579
+     idb:                {Publish Driver Package: C:\Windows\System32\DriverStore\FileRepository\heci.inf_amd64_b029e08ef3dd5b21\heci.inf} 09:25:08.579
+     idb:                     Activating driver package 'heci.inf_amd64_b029e08ef3dd5b21'.
+     cpy:                     Published 'heci.inf_amd64_b029e08ef3dd5b21\heci.inf' to 'oem8.inf'.
+     idb:                     Indexed 13 device IDs for 'heci.inf_amd64_b029e08ef3dd5b21'.
+     idb:                {Publish Driver Package: exit(0x00000000)} 09:25:08.595
+     sto:                {DRIVERSTORE IMPORT END} 09:25:08.595
+     sig:                     Installed catalog 'HECI.cat' as 'oem8.cat'.
+     sto:                {DRIVERSTORE IMPORT END: exit(0x00000000)} 09:25:08.704
+     sto:           {Stage Driver Package: exit(0x00000000)} 09:25:08.704
+     sto:      {Setup Import Driver Package - exit (0x00000000)} 09:25:08.720
+     dvi:      Searching for hardware ID(s):
+     dvi:           pci\ven_8086&dev_1e3a&subsys_34501558&rev_04
+     dvi:           pci\ven_8086&dev_1e3a&subsys_34501558
+     dvi:           pci\ven_8086&dev_1e3a&cc_078000
+     dvi:           pci\ven_8086&dev_1e3a&cc_0780
+     dvi:      Searching for compatible ID(s):
+     dvi:           pci\ven_8086&dev_1e3a&rev_04
+     dvi:           pci\ven_8086&dev_1e3a
+     dvi:           pci\ven_8086&cc_078000
+     dvi:           pci\ven_8086&cc_0780
+     dvi:           pci\ven_8086
+     dvi:           pci\cc_078000
+     dvi:           pci\cc_0780
+     dvi:      Class GUID of device changed to: {4d36e97d-e325-11ce-bfc1-08002be10318}.
+     dvi:      {Plug and Play Service: Device Install for PCI\VEN_8086&DEV_1E3A&SUBSYS_34501558&REV_04\3&11583659&0&B0}
+     ndv:           Driver INF Path: C:\Windows\INF\oem8.inf
+     ndv:           Driver Node Name: heci.inf:ed86ca1111dcc90e:TEE_DDI_W8_x64:11.0.5.1189:pci\ven_8086&dev_1e3a
+     ndv:           Driver Store Path: C:\Windows\System32\DriverStore\FileRepository\heci.inf_amd64_b029e08ef3dd5b21\heci.inf
+     dvi:           Searching for hardware ID(s):
+     dvi:                pci\ven_8086&dev_1e3a&subsys_34501558&rev_04
+     dvi:                pci\ven_8086&dev_1e3a&subsys_34501558
+     dvi:                pci\ven_8086&dev_1e3a&cc_078000
+     dvi:                pci\ven_8086&dev_1e3a&cc_0780
+     dvi:           Searching for compatible ID(s):
+     dvi:                pci\ven_8086&dev_1e3a&rev_04
+     dvi:                pci\ven_8086&dev_1e3a
+     dvi:                pci\ven_8086&cc_078000
+     dvi:                pci\ven_8086&cc_0780
+     dvi:                pci\ven_8086
+     dvi:                pci\cc_078000
+     dvi:                pci\cc_0780
+     dvi:           Class GUID of device changed to: {4d36e97d-e325-11ce-bfc1-08002be10318}.
+     ndv:           {Core Device Install} 09:25:08.751
+     sto:                {Configure 
