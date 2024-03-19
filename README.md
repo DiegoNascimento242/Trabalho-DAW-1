@@ -157,3 +157,183 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+3 - Salve o arquivo e reinicie seu servidor Flask para que as mudanças tenham efeito. Se o debug estiver ativado, ele deve recarregar automaticamente.
+
+Agora, qualquer requisição GET para /teste retornará um JSON com a mensagem "Rota executou com sucesso!".
+
+<h2>Etapa 8: Configurando o Front-End com React</h2>
+
+1 - No diretório do seu projeto React, você vai criar uma interface para interagir com a rota Flask. 
+Primeiro, instale o Axios, uma biblioteca que facilita as requisições HTTP, com o seguinte comando:
+
+```bash
+npm install axios
+```
+
+2 - No seu componente React, você vai adicionar um botão que, ao ser clicado, fará a requisição para a rota /teste e exibirá a mensagem. Aqui está um exemplo básico de como fazer isso:
+
+```jsx
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function App() {
+    const [message, setMessage] = useState('');
+
+    const getTestMessage = () => {
+        axios.get('http://localhost:5000/teste')
+            .then(response => {
+                setMessage(response.data.message);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    };
+
+    return (
+        <div>
+            <button onClick={getTestMessage}>Teste Rota</button>
+            <p>{message}</p>
+        </div>
+    );
+}
+
+export default App;
+```
+
+3 - Inicie seu servidor React (se ainda não estiver rodando) com:
+
+```bash
+npm start
+```
+
+Agora, ao clicar no botão "Teste Rota" no seu aplicativo React, o front-end fará uma requisição para o back-end, o servidor Flask processará a rota /teste e retornará a mensagem "Rota executou com sucesso!", que será então exibida no front-end.
+
+<h2>Etapa 9: Atualizar a Rota no Flask para Aceitar Parâmetros</h2>
+
+1 - Vá para o arquivo do seu projeto Flask que contém as definições das rotas (geralmente app.py).
+Adicione um novo parâmetro dinâmico à rota existente ou crie uma nova rota se desejar manter a funcionalidade anterior:
+
+```python
+# app.py
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/teste/<int:num>', methods=['GET'])
+def teste(num):
+    # A variável 'num' será o número fornecido na URL
+    return jsonify(message=f"Rota executou com sucesso recebendo o valor {num}!"), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+2 - Certifique-se de reiniciar o servidor Flask para aplicar as mudanças.
+
+3 - Agora no seu frontend React, você atualizará o componente para enviar o parâmetro na URL e tratar a resposta:
+No arquivo do componente React (por exemplo, App.js), importe useState para manter o estado da mensagem.
+Defina um estado para manter a resposta do servidor:
+
+```javascript
+// No topo do seu arquivo
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function App() {
+    // Este estado guardará a resposta do servidor
+    const [responseMessage, setResponseMessage] = useState('');
+    
+    // ...
+}
+```
+
+4 - Crie uma função para fazer a requisição GET com o parâmetro:
+
+```javascript
+const getResponse = (param) => {
+    axios.get(`http://localhost:5000/teste/${param}`)
+        .then(response => {
+            // Atualiza o estado com a resposta do servidor
+            setResponseMessage(response.data.message);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+```
+
+5 - Adicione um botão no JSX para chamar essa função passando o parâmetro desejado (neste caso, 10):
+
+```javascript
+// No método de renderização
+return (
+    <div>
+        <button onClick={() => getResponse(10)}>Enviar Parâmetro 10</button>
+        <p>{responseMessage}</p>
+    </div>
+);
+```
+
+6 - Certifique-se de que o React esteja rodando. Se você fez alterações, o servidor de desenvolvimento do React deve recarregar automaticamente.
+
+Com essas mudanças, quando você clicar no botão "Enviar Parâmetro 10", o front-end fará uma requisição GET para a URL http://localhost:5000/teste/10, onde 10 é o parâmetro dinâmico. O servidor Flask processará a rota e retornará a mensagem "Rota executou com sucesso recebendo o valor 10!", que será então armazenada no estado responseMessage e exibida abaixo do botão no seu aplicativo React.
+
+<h2>Etapa 10: Atualizando o Flask para Aceitar Parâmetros de Consulta</h2>
+
+1 - Abra o arquivo do projeto Flask com as definições das rotas (geralmente app.py).
+Modifique a função de rota para capturar os parâmetros de consulta usando o objeto request:
+
+```python
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/teste', methods=['GET'])
+def teste():
+    # Captura os parâmetros de consulta 'valor' e 'quantidade'
+    valor = request.args.get('valor', default=1, type=int)
+    quantidade = request.args.get('quantidade', default=1, type=int)
+    return jsonify(message=f"Rota executou com sucesso recebendo o valor {valor} e quantidade {quantidade}!"), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+2 - Aqui, request.args.get é usado para obter os parâmetros de consulta. Os argumentos default e type são usados para definir um valor padrão e o tipo esperado dos parâmetros, respectivamente.
+Reinicie o servidor Flask para que as alterações entrem em vigor.
+
+3 - Atualizando o Frontend React para Enviar Parâmetros de Consulta.
+No front-end com React, atualize o componente para enviar os parâmetros de consulta na URL.
+Defina uma nova função para enviar a requisição com os parâmetros de consulta:
+
+```javascript
+const getResponseWithQuery = () => {
+    const queryParams = new URLSearchParams({ valor: 10, quantidade: 3 }).toString();
+    axios.get(`http://localhost:5000/teste?${queryParams}`)
+        .then(response => {
+            // Atualiza o estado com a resposta do servidor
+            setResponseMessage(response.data.message);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+```
+
+4 - No exemplo acima, URLSearchParams é utilizado para criar uma string de parâmetros de consulta.
+
+Adicione um botão no JSX que chama essa função quando clicado:
+
+```jsx
+return (
+    <div>
+        <button onClick={getResponseWithQuery}>Enviar Parâmetros de Consulta</button>
+        <p>{responseMessage}</p>
+    </div>
+);
+```
+
+5 - Execute seu servidor React para ver as mudanças.
+
+Agora, quando o botão "Enviar Parâmetros de Consulta" é clicado no aplicativo React, o front-end faz uma requisição GET para a URL http://localhost:5000/teste?valor=10&quantidade=3. O servidor Flask processa a requisição, capturando os parâmetros de consulta valor e quantidade, e retorna a mensagem "Rota executou com sucesso recebendo o valor 10 e quantidade 3!" que será exibida no front-end.
