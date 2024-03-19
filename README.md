@@ -102,4 +102,58 @@ def hello_world():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+Este código cria uma aplicação Flask simples com uma rota que retorna "Olá, Mundo!".
+
+5 - Execute o aplicativo Flask. Certifique-se de que seu ambiente virtual ainda esteja ativado, e execute o seguinte comando no terminal:
+
+```bash
+python app.py
+```
+
+Você verá que o servidor Flask está rodando e acessível em http://127.0.0.1:5000/ Ao acessar este endereço em um navegador, você verá a mensagem "Olá, Mundo!".
+
+<h2>Etapa 6: Criando e Iniciando um Projeto React</h2>
+Após instalar o Node.js e o NPM, você está pronto para criar e iniciar um projeto React.
+
+1 - Crie um novo aplicativo React usando o Create React App, uma ferramenta oficialmente suportada que cria um front-end React com uma boa configuração padrão. Substitua meu-app-react pelo nome que desejar para seu aplicativo:
+
+```bash
+npx create-react-app meu-app-react
+```
+Este comando cria um novo diretório chamado meu-app-react (ou o nome que você escolheu) com todos os arquivos necessários para começar a desenvolver um aplicativo React.
+
+2 - Entre no diretório do seu aplicativo:
+
+```bash
+cd meu-app-react
+```
+
+3 - Inicie o servidor de desenvolvimento do React com o seguinte comando:
+
+```bash
+npm start
+```
+
+Esse comando inicia um servidor de desenvolvimento e abre uma janela do navegador mostrando seu aplicativo React. Por padrão, o aplicativo React está acessível em http://localhost:3000/
+
+Você verá uma página inicial do React, indicando que o aplicativo foi criado e iniciado com sucesso.
+
+<h2>Etapa 7: Criando uma Rota no Back-End com Flask</h2>
+
+1 - No diretório do seu projeto Flask, abra o arquivo que contém as definições de rota, neste caso será o arquivo app.py
+
+2 - Adicione o seguinte código para criar uma nova rota:
+
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/teste', methods=['GET'])
+def teste():
+    return jsonify(message="Rota executou com sucesso!"), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
 
