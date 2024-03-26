@@ -337,3 +337,263 @@ return (
 5 - Execute seu servidor React para ver as mudanças.
 
 Agora, quando o botão "Enviar Parâmetros de Consulta" é clicado no aplicativo React, o front-end faz uma requisição GET para a URL http://localhost:5000/teste?valor=10&quantidade=3. O servidor Flask processa a requisição, capturando os parâmetros de consulta valor e quantidade, e retorna a mensagem "Rota executou com sucesso recebendo o valor 10 e quantidade 3!" que será exibida no front-end.
+
+<h2>Etapa 11: Criando um Formulário no Front-End com React</h2>
+Vamos criar um formulário no React que permita ao usuário entrar com diversos tipos de dados.
+
+1 - No seu projeto React, abra o arquivo do componente onde você deseja adicionar o formulário (por exemplo, App.js) e adicione o seguinte estado inicial para armazenar os valores do formulário:
+
+```jsx
+import React, { useState } from 'react';
+
+function App() {
+    const [formData, setFormData] = useState({
+        texto: '',
+        inteiro: 0,
+        booleano: false,
+        opcaoSelect: '',
+        opcaoRadio: ''
+    });
+
+```
+
+2 - Adicione uma função para lidar com a mudança nos inputs e atualizar o estado do formulário:
+
+```jsx
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    }
+```
+
+3 - Agora, vamos adicionar o JSX do formulário:
+
+```jsx
+    return (
+        <div>
+            <form>
+                <input
+                    name="texto"
+                    type="text"
+                    value={formData.texto}
+                    onChange={handleChange}
+                />
+                <input
+                    name="inteiro"
+                    type="number"
+                    value={formData.inteiro}
+                    onChange={handleChange}
+                />
+                <label>
+                    <input
+                        name="booleano"
+                        type="checkbox"
+                        checked={formData.booleano}
+                        onChange={handleChange}
+                    />
+                    Booleano
+                </label>
+                <select
+                    name="opcaoSelect"
+                    value={formData.opcaoSelect}
+                    onChange={handleChange}
+                >
+                    <option value="">Selecione uma opção</option>
+                    <option value="opcao1">Opção 1</option>
+                    <option value="opcao2">Opção 2</option>
+                </select>
+                <div>
+                    <label>
+                        <input
+                            type="radio"
+                            name="opcaoRadio"
+                            value="radio1"
+                            checked={formData.opcaoRadio === "radio1"}
+                            onChange={handleChange}
+                        />
+                        Radio 1
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="opcaoRadio"
+                            value="radio2"
+                            checked={formData.opcaoRadio === "radio2"}
+                            onChange={handleChange}
+                        />
+                        Radio 2
+                    </label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    );
+}
+
+export default App;
+
+```
+
+<h2>Etapa 12: Enviando os Dados do Formulário para o Back-End</h2>
+
+Para enviar os dados do formulário do front-end para o back-end, vamos utilizar o Axios no evento de submit do formulário.
+
+1 - Adicione a biblioteca Axios ao seu projeto React (se ainda não o fez):
+
+```bash
+npm install axios
+```
+
+2 - Adicione a função handleSubmit ao seu componente para lidar com o envio do formulário:
+
+```jsx
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:5000/formulario', formData)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    }
+```
+
+3 - Modifique a tag <form> para incluir o handleSubmit:
+
+```jsx
+<form onSubmit={handleSubmit}>
+```
+
+<h2>Etapa 13: Configurando o Back-End com Flask para Receber os Dados do Formulário</h2>
+No lado do servidor Flask, você vai configurar uma rota para receber os dados do formulário e retornar uma resposta.
+
+1 - Abra o arquivo app.py no seu projeto Flask e importe request do Flask:
+
+```python
+from flask import Flask, request, jsonify
+```
+
+2 - Adicione a rota /formulario para receber os dados via POST e retorne os mesmos dados (ou uma página HTML com os dados, se preferir):
+
+```python
+@app.route('/formulario', methods=['POST'])
+def formulario():
+    dados_formulario = request.json
+    return jsonify(dados_formulario)
+```
+
+3 - Certifique-se de que o CORS esteja habilitado em seu servidor Flask para permitir requisições do seu projeto
+
+<h2>Etapa 14: Validando Dados no Front-End com React</h2>
+Para validar os dados do formulário no front-end, podemos utilizar o estado do React para armazenar mensagens de erro e condicionalmente exibi-las se houver falhas na validação. Vamos adicionar essa funcionalidade ao nosso componente.
+
+1 - Amplie o estado inicial do seu componente para incluir os erros de validação:
+
+```jsx
+const [errors, setErrors] = useState({});
+```
+
+2 - Crie uma função para validar os dados antes do envio:
+
+```jsx
+const validateForm = (data) => {
+    let errors = {};
+
+    if (!data.texto || data.texto.length < 2 || data.texto.length > 255) {
+        errors.texto = 'Texto deve ter entre 2 e 255 caracteres.';
+    }
+    if (!data.inteiro || data.inteiro <= 0 || data.inteiro >= 1000) {
+        errors.inteiro = 'Inteiro deve ser maior que 0 e menor que 1000.';
+    }
+    if (data.booleano === '') {
+        errors.booleano = 'Booleano é obrigatório.';
+    }
+    if (!data.opcaoSelect) {
+        errors.opcaoSelect = 'Uma opção do dropdown deve ser selecionada.';
+    }
+    if (!data.opcaoRadio) {
+        errors.opcaoRadio = 'Uma opção de rádio deve ser selecionada.';
+    }
+
+    return errors;
+}
+```
+
+3 - Modifique a função handleSubmit para validar os dados antes do envio. Se houver erros, eles devem ser exibidos ao usuário:
+
+```jsx
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formErrors = validateForm(formData);
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+            return; // Parar a execução se houver erros
+        }
+        // Se não houver erros, enviar os dados
+        axios.post('http://localhost:5000/formulario', formData)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    }
+```
+
+4 - Adicione mensagens de erro no JSX do formulário, logo abaixo de cada campo de entrada:
+
+```jsx
+<div>
+    {errors.texto && <p style={{color: 'red'}}>{errors.texto}</p>}
+    {/* Repita para os outros campos, ajustando o nome do campo conforme necessário */}
+</div>
+```
+
+<h2>Etapa 15: Validando Dados no Back-End com Flask</h2>
+Para a validação dos dados no back-end, podemos verificar cada campo recebido na requisição POST e retornar uma mensagem de erro se algum dos campos não atender aos requisitos.
+
+1 - Dentro da rota /formulario no Flask, adicione a validação para cada campo:
+
+```python
+@app.route('/formulario', methods=['POST'])
+def formulario():
+    dados = request.json
+    erros = {}
+
+    if not dados.get('texto') or len(dados['texto']) < 2 or len(dados['texto']) > 255:
+        erros['texto'] = 'Texto deve ter entre 2 e 255 caracteres.'
+    if not dados.get('inteiro') or dados['inteiro'] <= 0 or dados['inteiro'] >= 1000:
+        erros['inteiro'] = 'Inteiro deve ser maior que 0 e menor que 1000.'
+    if 'booleano' not in dados:
+        erros['booleano'] = 'Booleano é obrigatório.'
+    if not dados.get('opcaoSelect'):
+        erros['opcaoSelect'] = 'Uma opção do dropdown deve ser selecionada.'
+    if not dados.get('opcaoRadio'):
+        erros['opcaoRadio'] = 'Uma opção de rádio deve ser selecionada.'
+
+    if erros:
+        return jsonify({"erro": erros}), 400
+
+    return jsonify(dados), 200
+```
+
+2 - Certifique-se de que o CORS (Cross-Origin Resource Sharing) esteja habilitado no seu servidor Flask, especialmente se o front-end e o back-end estiverem rodando em portas diferentes. Você pode instalar a extensão Flask-CORS e usá-la em sua aplicação:
+
+```bash
+pip install Flask-CORS
+```
+E no seu app.py, adicione:
+
+```python
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+```
+
+Dessa forma, o servidor Flask validará os dados recebidos do formulário. Se houver algum erro de validação
+
