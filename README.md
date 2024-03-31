@@ -17,10 +17,14 @@ xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 sudo apt install -y python3 python3-pip python3-venv
 ```
 
+1.1 - Após instalar o Python crie as pastas dos seus projetos. Crie uma pasta para o projeto e dentro dela crie duas pastas: backend e frontend.
+
+1.2 - Abra a pasta de backend no Vscode ou na sua IDE de preferência e ative o console para digitar os comandos necessários.
+
 2 - Crie um ambiente virtual: Para manter as dependências do projeto isoladas, é uma boa prática usar um ambiente virtual. Crie um para o seu projeto Flask:
 
 ```bash
-python3 -m venv myprojectenv
+python -m venv myprojectenv
 source myprojectenv/bin/activate
 ```
 
@@ -38,14 +42,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm install --lts
-```
-
-2 - Crie um novo projeto React: Com o Node.js instalado, você pode criar um novo projeto React:
-
-```bash
-npx create-react-app my-react-app
-cd my-react-app
-npm start
 ```
 
 <h2>Etapa 4: Configurando o Docker e PostgreSQL</h2>
@@ -70,12 +66,7 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432
 <h2>Etapa 5: Criando e Iniciando um Projeto Flask</h2>
 Após ter instalado o Python e o Flask, conforme explicado anteriormente, você está pronto para criar e iniciar um projeto Flask.
 
-1 - Crie um diretório para o seu projeto Flask e entre nele:
-
-```bash
-mkdir meu_projeto_flask
-cd meu_projeto_flask
-```
+1 - Volte para seu diretório de backend com o flask:
 
 2 - Ative o ambiente virtual que você criou anteriormente (se você seguiu o tutorial desde o início, caso contrário, crie um novo ambiente virtual como explicado antes):
 
@@ -88,6 +79,7 @@ source ../myprojectenv/bin/activate
 ```bash
 touch app.py
 ```
+
 4 - Abra este arquivo em um editor de texto de sua preferência e adicione o seguinte código:
 
 ```python
@@ -115,7 +107,9 @@ Você verá que o servidor Flask está rodando e acessível em http://127.0.0.1:
 <h2>Etapa 6: Criando e Iniciando um Projeto React</h2>
 Após instalar o Node.js e o NPM, você está pronto para criar e iniciar um projeto React.
 
-1 - Crie um novo aplicativo React usando o Create React App, uma ferramenta oficialmente suportada que cria um front-end React com uma boa configuração padrão. Substitua meu-app-react pelo nome que desejar para seu aplicativo:
+1 - Abra sua pasta de frontend no VsCode e ative o terminal para digitar os seguintes comandos.
+
+1.2 - Crie um novo aplicativo React usando o Create React App, uma ferramenta oficialmente suportada que cria um front-end React com uma boa configuração padrão. Substitua meu-app-react pelo nome que desejar para seu aplicativo:
 
 ```bash
 npx create-react-app meu-app-react
@@ -162,6 +156,9 @@ if __name__ == '__main__':
 Agora, qualquer requisição GET para /teste retornará um JSON com a mensagem "Rota executou com sucesso!".
 
 <h2>Etapa 8: Configurando o Front-End com React</h2>
+
+LEMBRANDO: Ambas as aplicações devem estar rodando juntas, então será necessário ter 2 VsCode aberto com o backend e o frontend rodando.
+Essa abordagem pode ser mais complicada mas é a mais próxima do mercado de trabalho atualmente.
 
 1 - No diretório do seu projeto React, você vai criar uma interface para interagir com a rota Flask. 
 Primeiro, instale o Axios, uma biblioteca que facilita as requisições HTTP, com o seguinte comando:
