@@ -4,6 +4,7 @@ Instalar as ferramentas necessárias para o desenvolvimento de um software web e
 
 <h3>Instale as dependências necessárias</h3>
 Alguns pacotes são essenciais para o desenvolvimento de software e para as etapas seguintes deste tutorial. Instale-os com:
+LEMRE-SE: ANTES DE INSTALAR QUALQUER COISA SEMPRE DE UPDATE >>> Digite no terminal : sudo apt update
 
 ```bash
 sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
