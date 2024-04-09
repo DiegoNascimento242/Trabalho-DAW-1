@@ -8,7 +8,7 @@ Alguns pacotes são essenciais para o desenvolvimento de software e para as etap
 ```bash
 sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 ```
 <h2>Etapa 2: Instalando Python e Flask</h2>
 1 - Instale o Python: O Ubuntu geralmente vem com o Python pré-instalado. Você pode verificar a versão do Python com python3 --version. Se necessário, instale o Python 3 com:
